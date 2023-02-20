@@ -1,6 +1,5 @@
 package cloud.tazz.bloom;
 
-import com.google.common.hash.HashCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
