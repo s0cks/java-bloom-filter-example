@@ -1,0 +1,41 @@
+plugins {
+    id "io.freefair.aspectj" version "5.1.1" apply false
+}
+
+version = '0.0.1-SNAPSHOT'
+
+import groovy.json.JsonSlurper
+def versions = (new JsonSlurper().parse(file("versions.json")))
+
+apply plugin: "java"
+apply plugin: "io.freefair.aspectj"
+
+group = 'cloud.tazz'
+sourceCompatibility = 17
+targetCompatibility = 17
+
+repositories {
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${versions.get("junit")}"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:${versions.get("junit")}"
+    implementation "org.aspectj:aspectjweaver:${versions.get("aspectj")}"
+    implementation "org.aspectj:aspectjrt:${versions.get("aspectj")}"
+    implementation "org.apache.tika:tika-core:${versions.get("tika")}"
+    implementation "org.apache.tika:tika-parsers-standard-package:${versions.get("tika")}"
+    implementation "net.sf.jopt-simple:jopt-simple:${versions.get("jopt-simple")}"
+    implementation "org.slf4j:slf4j-api:${versions.get("slf4j")}"
+    implementation "ch.qos.logback:logback-core:${versions.get("logback")}"
+    implementation "ch.qos.logback:logback-classic:${versions.get("logback")}"
+    implementation "com.google.inject:guice:${versions.get("guice")}"
+    implementation "com.google.inject.extensions:guice-multibindings:${versions.get("guice-multibindings")}"
+    implementation "com.google.guava:guava:${versions.get("guava")}"
+    implementation "com.google.code.gson:gson:${versions.get("gson")}"
+    implementation "org.elasticsearch.client:elasticsearch-rest-client:${versions.get("elasticsearch")}"
+}

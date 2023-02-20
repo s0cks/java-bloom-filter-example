@@ -1,0 +1,13 @@
+{
+  "guice": "5.1.0",
+  "guice-multibindings": "4.2.3",
+  "guava": "31.1-jre",
+  "gson": "2.10",
+  "elasticsearch": "8.5.3",
+  "junit": "5.8.1",
+  "logback": "1.4.5",
+  "slf4j": "2.0.6",
+  "jopt-simple": "6.0-alpha-3",
+  "tika": "2.6.0",
+  "aspectj": "1.9.19"
+}
